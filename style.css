@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+:root {
+  --main-bg: hsl(0, 0%, 98%);
+  --main-txt: hsl(234, 12%, 34%);
+  --txt-2: hsl(229, 6%, 66%);
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --white: white;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 3.3em;
+}
+
+main {
+  width: clamp(280px, 100%, 450px);
+}
+
+.hero-title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 200;
+  color: var(--main-txt);
+}
+
+.h1-2 {
+  font-weight: 600;
+  display: block;
+}
+
+.hero-tagline {
+  margin: 1.467em 0 5.133em 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--txt-2);
+}
+
+.card {
+  max-width: 100%;
+  border-radius: 0.5em 0.5em 1em 1em;
+  background-color: var(--white);
+  padding: 2.8em;
+  box-shadow: 0px 15px 25px -5px rgba(55, 127, 210, 0.2);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.2em;
+}
+
+.cyan {
+  border-top: 4px solid var(--cyan);
+}
+
+.red {
+  border-top: 4px solid var(--red);
+}
+.orange {
+  border-top: 4px solid var(--orange);
+}
+.blue {
+  border-top: 4px solid var(--blue);
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--main-txt);
+  margin-bottom: 0.2em;
+}
+
+.card-details {
+  color: var(--txt-2);
+  font-size: 1.3rem;
+  line-height: 175%;
+}
+
+.card-icons {
+  margin-top: 3.1em;
+  display: block;
+  max-width: 5.8rem;
+  height: auto;
+  align-self: flex-end;
+}
+
+@media (min-width: 1024px) {
+  body {
+    align-items: center;
+  }
+
+  main {
+    width: clamp(665px, 100%, 1114px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-tagline {
+    margin: 1.133em 0 4.333em 0;
+    display: block;
+    font-size: 1.5rem;
+    max-width: 510px;
+  }
+
+  .card-icons {
+    margin-top: 3.9em;
+    max-width: 6.4rem;
+  }
+
+  .cards-ctnr {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.1em;
+  }
+
+  .card {
+    flex: 1;
+    padding: 3.2em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 3.6rem;
+  }
+
+  .cards-ctnr {
+    display: grid;
+    grid-template-areas:
+      ". red ."
+      ". red ."
+      "cyan red blue"
+      "cyan red blue"
+      "cyan orange blue"
+      "cyan orange blue"
+      ". orange ."
+      ". orange .";
+  }
+  .card {
+    width: 350px;
+    margin-bottom: 0;
+  }
+  .red {
+    grid-area: red;
+  }
+  .cyan {
+    grid-area: cyan;
+  }
+  .blue {
+    grid-area: blue;
+  }
+  .orange {
+    grid-area: orange;
+  }
+}
