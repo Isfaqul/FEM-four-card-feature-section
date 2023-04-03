@@ -30,6 +30,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   padding: 3.3em;
+  background-color: var(--main-bg);
 }
 
 main {
